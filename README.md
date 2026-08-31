@@ -17,7 +17,7 @@ The file `HW1-RAW-Image-Processing.ipynb` provides code to read a DNG file, usin
 
 You will implement a basic version of the image post-processing software stack: demosaic, white balance, gamma curve, clip and quantize, and compress to JPEG.
 
-*Note:* to match my example results in `target/` exactly, be sure to do all your computations in 32-bit floating point.
+*Note:* to match my example results in `example-processed/` exactly, be sure to do all your computations in 32-bit floating point.
 
 ## Code requirements
 
