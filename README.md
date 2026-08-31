@@ -17,16 +17,18 @@ The file `HW1-RAW-Image-Processing.ipynb` provides code to read a DNG file, usin
 
 You will implement a basic version of the image post-processing software stack: demosaic, white balance, gamma curve, clip and quantize, and compress to JPEG.
 
+*Note:* to match my example results in `target/` exactly, be sure to do all your computations in 32-bit floating point.
+
 ## Code requirements
 
-1. Convert the raw image data to 32-bit floating point in [0 1] range.
+1. Convert the raw image data to 32-bit floating point in [0 1] range (divide by the maximum value).
 
 #### Demosaic
 Refer to the diagrams in the "Lecture 2.1: The Camera Pipeline" slides to help you understand this part.
 
 2. Create the filter kernels you will need for the Bayer demosaicing.
 3. Apply the filter kernels to the RAW image (using `scipy.ndimage.correlate`).  Use `mirror` padding mode.
-4. Create a `red`, `green`, and `blue` array, each of the same shape as the RAW image.
+4. Create `red`, `green`, and `blue` 32-bit floating point arrays, each of the same shape as the RAW image.
 5. Copy the values from either the RAW image or the filter outputs as appropriate to form the interpolated red, green, and blue channel images.  Use NumPy slicing and indexing, not for loops, to do this.
 6. Stack the red, green, and blue channels into a single array.
 
